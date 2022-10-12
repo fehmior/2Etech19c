@@ -55,25 +55,86 @@ namespace ConsoleApp1
             }
             return alist;
         }
+        public static int Sumc(int n)
+        {
+            int cyfra = 0;
+            int sum = 0;
+            while (n > 0)
+            {
+                cyfra = n % 10;
+                sum += cyfra;
+                n = n / 10;
+            }
+            return sum;
+        }
+        public static int Silnia(int n)
+        {
+            if (n == 0)
+            {
+                return 1;
+            }
+            return Silnia(n - 1) * n;
+        }
+        public static int SilniaIteracyjna(int n)
+        {
+            int wy = 1;
+            for (int i = 2; i <= n; i++)
+            {
+                wy = wy * i;
+            }
+            return wy;
+        }
 
+        public static int fibo(int n)
+        {
+            if (n == 0)
+            {
+                return 0;
+            }
+            if(n == 1)
+            {
+                return 1;
+            }
+            if (n <= 2)
+            {
+                return 1;
+            }
+            return fibo(n-1) + fibo(n-2);
+        }
         static void Main(string[] args)
         {
-           /* int a = int.Parse(Console.ReadLine());
-            int b = int.Parse(Console.ReadLine());
-            int p = int.Parse(Console.ReadLine());
+            /* int a = int.Parse(Console.ReadLine());
+             int b = int.Parse(Console.ReadLine());
+             int p = int.Parse(Console.ReadLine());
 
-            Console.WriteLine(kp1z1(a,b));
-            Console.WriteLine(kp2z2(a));
-            Console.WriteLine(kp2z6(a,b));
-            kp3z1(a);
-*/
-            ArrayList dzielniki = new ArrayList();
+             Console.WriteLine(kp1z1(a,b));
+             Console.WriteLine(kp2z2(a));
+             Console.WriteLine(kp2z6(a,b));
+             kp3z1(a);
+ */
+            /*ArrayList dzielniki = new ArrayList();
             int n = int.Parse(Console.ReadLine());
             dzielniki = kp3z3(n);
             foreach(int a in dzielniki)
             {
                 Console.WriteLine(a + " ");
-            }
+            }*/
+
+            // zad 2 k 4
+            //int n = int.Parse(Console.ReadLine());
+            // Console.WriteLine(Sumc(n));
+
+            // zad 3 k 4
+            //int n = int.Parse(Console.ReadLine());
+            //Console.WriteLine(Silnia(n));
+
+            // zad ankieta 
+            //int n = int.Parse(Console.ReadLine());
+            //Console.WriteLine(SilniaIteracyjna(n));
+
+            // zad 4
+            int n = int.Parse(Console.ReadLine());
+            Console.WriteLine(fibo(n));
             Console.ReadKey();
         }
     }
